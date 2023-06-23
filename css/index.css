@@ -1,0 +1,332 @@
+html {
+  font-size: 100px;
+}
+html,
+body,
+#app {
+  height: 100%;
+  overflow: hidden;
+}
+#app {
+  position: relative;
+}
+.header-box {
+  /* background: rgba(0, 0, 0, 0.1); */
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+/* 头部 */
+.header {
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 0.1rem 0.12rem;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .header-img {
+  display: flex;
+  height: 0.28rem;
+  justify-content: space-around;
+  align-items: center;
+}
+.header .header-img img {
+  width: 0.28rem;
+  height: 100%;
+  border-radius: 0.14rem;
+}
+.header .header-img a {
+  color: #FFF;
+  font-size: 0.14rem;
+  margin: 0 0.03rem;
+}
+.header .have {
+  padding: 0.05rem 0.1rem;
+  color: #FFF;
+  border: 1px solid #ccc;
+  border-radius: 0.14rem;
+}
+.header::after {
+  content: "";
+  display: block;
+  width: 90%;
+  height: 0.01rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+}
+/* 内容 */
+.main-box {
+  width: 100%;
+  height: 3.17rem;
+  padding-top: 0.7rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4;
+}
+.main-box .wrapper {
+  width: 2.47rem;
+  height: 2.47rem;
+  margin: 0 auto;
+  position: relative;
+}
+.main-box .wrapper .apron {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.main-box .wrapper .apron .cove {
+  width: 1.84rem;
+  height: 1.84rem;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: auto;
+  margin-top: 0.32rem;
+  position: relative;
+}
+.main-box .wrapper .apron .cove img {
+  width: 100%;
+  height: 100%;
+}
+.main-box .wrapper .apron::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-image: url(https://p5.music.126.net/obj/wo3DlcOGw6DClTvDisK1/4602256867/5855/63fb/325b/d7e4e3a244701ee85fecb5d4f6b5bd57.png?imageView=&quality=75&thumbnail=200y200);
+  background-size: contain;
+  overflow: hidden;
+}
+.main-box .wrapper .play-box {
+  width: 0.56rem;
+  height: 0.56rem;
+  background: url(../images/play-box.png) no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: block;
+  opacity: 1;
+}
+.main-box .wrapper::after {
+  content: "";
+  width: 0.73rem;
+  height: 1.18rem;
+  position: absolute;
+  z-index: 2;
+  top: 0.2rem;
+  left: 1.7rem;
+  background: url(https://s3.music.126.net/mobile-new/img/needle-ab.png?4b81da043356110081e5ccaed2e6f2ad=) no-repeat;
+  background-size: contain;
+  transform: rotate(355deg);
+  transform-origin: left top;
+}
+.apron.move {
+  animation: musicMove 20s linear 0s infinite both;
+  animation-fill-mode: both;
+  animation-play-state: paused;
+}
+@keyframes musicMove {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* 歌词 */
+.lyric {
+  width: 100%;
+  height: 2.4rem;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 5;
+}
+.lyric .lyric-wrapper {
+  width: 100%;
+  height: 1.84rem;
+  overflow: hidden;
+  -webkit-mask: -webkit-linear-gradient(top, #000, #000 70%, rgba(0, 0, 0, 0));
+}
+.lyric .lyric-wrapper h2 {
+  text-align: center;
+  font-size: 0.18rem;
+  color: #FEFEFE;
+}
+.lyric .lyric-wrapper h2 p {
+  display: inline-block;
+  font-size: 0.16rem;
+  color: #fefefeb1;
+  font-weight: 100;
+}
+.lyric .lyric-wrapper .lyric-conter {
+  width: 100%;
+  height: 1.5rem;
+  margin-top: 0.15rem;
+  overflow: hidden;
+}
+.lyric .lyric-wrapper .lyric-conter .lyric-item {
+  width: 100%;
+  text-align: center;
+  transform: translateY(0%);
+}
+.lyric .lyric-wrapper .lyric-conter .lyric-item p {
+  font-size: 0.16rem;
+  color: #ffffff;
+  padding-bottom: 0.08rem;
+  text-align: center;
+}
+.lyric .lyric-wrapper .lyric-conter .lyric-item p.active {
+  color: #31C27C;
+  transition: color 0.3s;
+  font-size: 0.18rem;
+  font-weight: 600;
+}
+/* 尾部 */
+.footer {
+  position: absolute;
+  bottom: 0.4rem;
+  left: 0;
+  width: 100%;
+  z-index: 4;
+}
+.footer .bar {
+  display: flex;
+  align-items: center;
+}
+.footer .bar .time {
+  width: 0.4rem;
+  line-height: 0.46rem;
+  text-align: center;
+  font-size: 0.12rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+.footer .bar .progress {
+  position: relative;
+  flex-grow: 1;
+  height: 0.02rem;
+  background: rgba(255, 255, 255, 0.5);
+}
+.footer .bar .progress .already {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #31C27C;
+}
+.footer .button-box {
+  width: 100%;
+  height: 0.4rem;
+  display: flex;
+  justify-content: space-around;
+}
+.footer .button-box .group {
+  display: block;
+  width: 1.7rem;
+  height: 100%;
+  border: 1px solid #ff3a3a;
+  border-radius: 0.2rem;
+  color: #ff3a3a;
+  line-height: 0.4rem;
+  text-align: center;
+  font-size: 0.18rem;
+}
+.footer .button-box .download {
+  background: #ff3a3a;
+  color: #FFF;
+}
+/* 背景图 */
+.mark-image,
+.mark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.mark-image {
+  /* background: url(http://p1.music.126.net/vmCcDvD1H04e9gm97xsCqg==/109951163350929740.jpg?imageView&thumbnail=50y50&quality=15&tostatic=0); */
+  opacity: 1;
+  transform: scale(1.5);
+  transform-origin: center center;
+  filter: blur(30px);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+}
+.mark-overlay {
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.5);
+}
+.superior-shade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  width: 100%;
+  height: 0.98rem;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+.shade {
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0), #000);
+}
+.all-shade {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+/* Loading层 */
+.loading-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  background: #555;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading-box .content img,
+.loading-box .content span {
+  display: block;
+}
+.loading-box .content img {
+  margin: 0 auto;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+.loading-box .content span {
+  margin-top: 0.1rem;
+  color: #1989fa;
+}

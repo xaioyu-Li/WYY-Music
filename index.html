@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- 头部 -->
+        <div class="header-box">
+            <header class="header">
+                <!-- <div class="header-img">
+                    <img src="https://p1.music.126.net/3L4q_THtqVP0Tuofry303Q==/109951168543731054.jpg?imageView=1&type=webp&thumbnail=85x0"
+                        alt="">
+                    <a href="">《消愁》 - 我喜欢的音乐</a>
+                </div>
+                <a class="have">打开看看></a> -->
+            </header>
+        </div>
+        <!-- 内容 -->
+        <main class="main-box">
+            <div class="wrapper">
+                <div class="apron">
+                    <div class="cove">
+                        <img src="" alt="">
+                    </div>
+                </div>
+                <div class="play-box"></div>
+            </div>
+        </main>
+        <!-- 歌词部分 -->
+        <div class="lyric">
+            <div class="lyric-wrapper">
+                <h2 class="lyric-title">
+                    <!-- <span>消愁</span>
+                    <i>-</i>
+                    <p>毛不易</p> -->
+                </h2>
+                <div class="lyric-conter">
+                    <div class="lyric-item">
+                        <!-- <p>作词 : 毛不易</p>
+                        <p>作曲 : 毛不易</p>
+                        <p>编曲 : 赵兆</p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 尾部 -->
+        <div class="footer">
+            <div class="bar">
+                <span class="time current">00:00</span>
+                <div class="progress">
+                    <div class="already"></div>
+                </div>
+                <span class="time duration">00:00</span>
+            </div>
+            <div class="button-box">
+                <a href="" class="group open">打 开</a>
+                <a href="" class="group download">下 载</a>
+            </div>
+        </div>
+        <!-- 背景图 -->
+        <div class="mark-image"></div>
+        <div class="all-shade"></div>
+        <div class="superior-shade"></div>
+        <div class="shade"></div>
+        <div class="loading-box">
+            <div class="content">
+                <img src="images/loading.gif" alt="">
+                <span>奴家正在努力加载中...</span>
+            </div>
+        </div>
+        <audio src="" id="audioBox" preload="metadata"></audio>
+    </div>
+    <script>
+        (function () {
+            const app = document.querySelector('#app'),
+                HTML = document.documentElement
+            const computed = function computed() {
+                let orien = Math.abs(window.orientation)
+                if (orien === 90) {
+                    // 切换到横屏
+                    alert('横屏体验不佳，请您切换到竖屏')
+                    app.style.display = 'none'
+                    return
+                }
+                // 当前是竖屏
+                app.style.display = 'block'
+
+                // 计算REM的换算比例
+                let deviceW = HTML.clientWidth,
+                    designW = 375,
+                    initialRatio = 100
+                if (deviceW > 540) deviceW = 540
+                let currentRatio = deviceW / designW * initialRatio
+                HTML.style.fontSize = currentRatio + 'px'
+            }
+            computed()
+            window.addEventListener('resize', computed)
+            // 基于 resize 代替 orientationchange 事件：这样可以适配模拟器中，设备的切换场景
+        })();
+    </script>
+    <script src="js/api.js"></script>
+    <script src="js/fastclick.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
