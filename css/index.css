@@ -130,8 +130,8 @@ body,
   height: 1.18rem;
   position: absolute;
   z-index: 2;
-  top: 0.2rem;
-  left: 1.7rem;
+  top: -0.5rem;
+  left: 1.2rem;
   background: url(https://s3.music.126.net/mobile-new/img/needle-ab.png?4b81da043356110081e5ccaed2e6f2ad=) no-repeat;
   background-size: contain;
   transform: rotate(355deg);
