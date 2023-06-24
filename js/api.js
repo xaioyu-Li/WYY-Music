@@ -2,7 +2,7 @@ const obj = {
     code: 0,
     message: 'ok',
     data: {
-        title: '《消愁》 - 我喜欢的音乐',
+        title: '让我心动的音乐',
         title1:'消愁',
         author: '毛不易',
         duration: '04:21',

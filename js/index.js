@@ -14,7 +14,8 @@ FastClick.attach(document.body);
         barBox = document.querySelector('.bar'),
         currentBox = barBox.querySelector('.current'),
         durationBox = barBox.querySelector('.duration'),
-        alreadyBox = barBox.querySelector('.already');
+        alreadyBox = barBox.querySelector('.already'),
+        wrapper = document.querySelector('.wrapper');
     let lyricList = [],
         timer = null,
         matchNum = 0;
@@ -34,7 +35,11 @@ FastClick.attach(document.body);
     const playend = function playend() {
         clearInterval(timer)
         timer = null
+        currentBox.innerHTML = '00:00'
+        alreadyBox.style.width = '0%'
         lyricItem.style.transform = 'translateY(0)'
+        wrapper.classList.remove('skate')
+        apronBox.classList.remove('move')
         lyricList.forEach(item => item.className = '')
         matchNum = 0
     }
@@ -64,7 +69,7 @@ FastClick.attach(document.body);
         }
         matchNum += matchs.length
         console.log(matchNum);
-        if (matchNum > 4) {
+        if (matchNum > 3) { 
             let offset = (matchNum - 4) * pH
             lyricItem.style.transform = `translateY(${-offset}px)`;
         }
@@ -78,12 +83,14 @@ FastClick.attach(document.body);
             apronBox.classList.add('move')
             apronBox.style.animationPlayState = 'running'
             playBox.style.opacity = '0'
+            wrapper.classList.add('skate')
             return
         }
         audioBox.pause()
         apronBox.style.animationPlayState = 'paused'
         clearInterval(timer)
         playBox.style.opacity = '1'
+        wrapper.classList.remove('skate')
         timer = null
     })
 
@@ -116,7 +123,7 @@ FastClick.attach(document.body);
         <div class="header-img">
             <img src="${pic}"
             alt="">
-            <a href="">${title}</a>
+            <a href="">《${title1}》 - ${title}</a>
         </div>
         <a class="have">打开看看></a> `;
         apronBox.innerHTML = `

@@ -134,6 +134,20 @@ body,
   left: 1.2rem;
   background: url(https://s3.music.126.net/mobile-new/img/needle-ab.png?4b81da043356110081e5ccaed2e6f2ad=) no-repeat;
   background-size: contain;
+  transform: rotate(335deg);
+  transform-origin: left top;
+  transition: all 0.5s ease;
+}
+.main-box .skate::after {
+  content: "";
+  width: 0.73rem;
+  height: 1.18rem;
+  position: absolute;
+  z-index: 2;
+  top: -0.5rem;
+  left: 1.2rem;
+  background: url(https://s3.music.126.net/mobile-new/img/needle-ab.png?4b81da043356110081e5ccaed2e6f2ad=) no-repeat;
+  background-size: contain;
   transform: rotate(355deg);
   transform-origin: left top;
 }
